@@ -111,17 +111,16 @@ const register = async() => {
     }
     // console.log(registration_data)
 
-    emailjs.send('service_szidh7f', 'enohofikircharitywebsite', registration_data, 'user_SiEvtmyyPRXcl78CsCTWt').then(
-      res => {
-        validate.message = 'Request Sent!'
-      },
-      error => {
-        validate.error = 'Failed to Send Request'
-      }
-    )
+    // emailjs.send('service_szidh7f', 'enohofikircharitywebsite', registration_data, 'user_SiEvtmyyPRXcl78CsCTWt').then(
+    //   res => {
+    //     validate.message = 'Request Sent!'
+    //   },
+    //   error => {
+    //     validate.error = 'Failed to Send Request'
+    //   }
+    // )
 
-    // const form_id = '1DJIUhtTuhT_nkKedFpw-bRQS_BZVEYHN-KSh57lJ6nA'
-    // const res = await fetch(`https://docs.google.com/forms/d/e/${form_id}/formResponse?usp=pp_url&entry.39112181=Menelik&entry.1312127952=Male&entry.1802411696=7/26/2005&entry.920961299=menelik.eyasu@gmail.com&entry.1214997693=%2B1+(571)+331+8223&entry.1489665384=Tutoring`)
+    const res = await fetch(`https://docs.google.com/forms/d/e/1FAIpQLScdfYgpN42qiDYVbvO2G0AkKR2qx_Yk9-9833eS8v2uvSeP8w/formResponse?&submit=Submit?usp=pp_url&entry.39112181=NAME&entry.1312127952=GENDER&entry.1802411696=BIRTHDATE&entry.920961299=EMAIL&entry.1214997693=PHONE&entry.1489665384=ACTIVITY`)
   }
 }
 </script>
