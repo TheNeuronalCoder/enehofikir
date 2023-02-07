@@ -1,7 +1,5 @@
 <script>
 import Navbar from '../Navbar.svelte'
-// import Footer from '../Footer.svelte'
-import emailjs from '@emailjs/browser'
 import country_codes from './country_codes'
 
 let name = ''
@@ -101,26 +99,17 @@ const register = async() => {
   if (validate.error == '') {
     loading = true
 
-    const registration_data = {
-      name,
-      gender,
-      email,
-      phone_number: phone,
-      activity: validate.other_activity ? other_activity : activity,
-      birth_date: `${birth_month}/${birth_date}/${birth_year}\n`
+    const reg = {
+      name: encodeURIComponent(name),
+      gender: encodeURIComponent(gender),
+      email: encodeURIComponent(email),
+      phone: encodeURIComponent(phone),
+      activity: encodeURIComponent(validate.other_activity ? other_activity : activity),
+      birth_date: encodeURIComponent(`${birth_month}/${birth_date}/${birth_year}`)
     }
-    // console.log(registration_data)
 
-    // emailjs.send('service_szidh7f', 'enohofikircharitywebsite', registration_data, 'user_SiEvtmyyPRXcl78CsCTWt').then(
-    //   res => {
-    //     validate.message = 'Request Sent!'
-    //   },
-    //   error => {
-    //     validate.error = 'Failed to Send Request'
-    //   }
-    // )
-
-    const res = await fetch(`https://docs.google.com/forms/d/e/1FAIpQLScdfYgpN42qiDYVbvO2G0AkKR2qx_Yk9-9833eS8v2uvSeP8w/formResponse?&submit=Submit?usp=pp_url&entry.39112181=NAME&entry.1312127952=GENDER&entry.1802411696=BIRTHDATE&entry.920961299=EMAIL&entry.1214997693=PHONE&entry.1489665384=ACTIVITY`)
+    const res = await fetch(`https://docs.google.com/forms/d/e/1FAIpQLScdfYgpN42qiDYVbvO2G0AkKR2qx_Yk9-9833eS8v2uvSeP8w/formResponse?&submit=Submit?usp=pp_url&entry.39112181=${reg.name}&entry.1312127952=${reg.gender}&entry.1802411696=${reg.birth_date}&entry.920961299=${reg.email}&entry.1214997693=${reg.phone}&entry.1489665384=${reg.activity}`, {mode:'no-cors'})
+    loading = false
   }
 }
 </script>
