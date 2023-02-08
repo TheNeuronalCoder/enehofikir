@@ -29,7 +29,7 @@ const next_page = () => {
 }
 
 onMount(async () => {
-  fetch('http://170.187.137.154:1337/api/stories?populate=*')
+  fetch('http://170.187.137.154/api/stories?populate=*')
   .then(res => res.json())
   .then(json => {
     const data = json.data.map(story => story.attributes)
@@ -58,7 +58,7 @@ onMount(async () => {
     <div id="cover-stories">
       {#each cover_stories as story}
         <div>
-          <img src="http://170.187.137.154:1337{story.thumbnail.data.attributes.url}" alt={story.title} />
+          <img src="http://170.187.137.154{story.thumbnail.data.attributes.url}" alt={story.title} />
           <a href={`/news/${story.title.toLowerCase().split(' ').join('-')}`}>{ story.title }</a>
         </div>
       {/each}
@@ -90,7 +90,7 @@ onMount(async () => {
       {#each latest_news.slice(page*4, Math.min(latest_news.length, page*4+4)) as story}
         <div>
           <a href={`/news/${story.title.toLowerCase().split(' ').join('-')}`}>
-            <img src="http://170.187.137.154:1337{story.thumbnail.data.attributes.url}" alt={story.title} />
+            <img src="http://170.187.137.154{story.thumbnail.data.attributes.url}" alt={story.title} />
             <h2>{ story.title }</h2>
             <p>{ story.content.substring(0, 150) }...</p>
           </a>

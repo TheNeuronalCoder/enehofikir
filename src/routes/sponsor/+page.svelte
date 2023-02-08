@@ -7,7 +7,7 @@ import Footer from '../Footer.svelte'
 let children = []
 
 onMount(async () => {
-  fetch('http://170.187.137.154:1337/api/children?populate=*')
+  fetch('http://170.187.137.154/api/children?populate=*')
   .then(res => res.json())
   .then(json => children = json.data.map(item => item.attributes))
   .catch(_ => console.error('500 Server Error'))
@@ -28,7 +28,7 @@ onMount(async () => {
       {#each children as child}
         <div class="member-card">
           <img width="300" height="200"
-               src="http://170.187.137.154:1337{child.photo.data.attributes.url}"
+               src="http://170.187.137.154{child.photo.data.attributes.url}"
                alt={child.name} />
           <h3>{ child.name }</h3>
           <span>{ child.name }</span>

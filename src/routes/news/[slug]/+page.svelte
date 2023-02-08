@@ -16,7 +16,7 @@ console.log(data)
 
   <div id="story">
     <a href="/news"><i class="mi mi-arrow-left"></i>Back to <i>News & Updates</i></a>
-    <img src="http://170.187.137.154:1337{data.thumbnail.data.attributes.url}" />
+    <img src="http://170.187.137.154{data.thumbnail.data.attributes.url}" />
     <h1>{ data.title }</h1>
     <p>{ data.content }</p>
 

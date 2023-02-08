@@ -11,7 +11,7 @@ let contacts = {
 }
 
 onMount(async () => {
-  fetch('http://170.187.137.154:1337/api/contact')
+  fetch('http://170.187.137.154/api/contact')
   .then(res => res.json())
   .then(json => {
 		contacts = json.data.attributes

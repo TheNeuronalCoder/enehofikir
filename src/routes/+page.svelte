@@ -12,14 +12,14 @@ let values = ''
 let slides = []
 
 onMount(async () => {
-  fetch('http://170.187.137.154:1337/api/home?populate=*')
+  fetch('http://170.187.137.154/api/home?populate=*')
   .then(res => res.json())
   .then(json => {
 		about = json.data.attributes.about
 		mission = json.data.attributes.mission
 		vision = json.data.attributes.vision
 		values = json.data.attributes.values
-    slides = json.data.attributes.slides.data.map(item => `http://170.187.137.154:1337${item.attributes.url}`)
+    slides = json.data.attributes.slides.data.map(item => `http://170.187.137.154${item.attributes.url}`)
     console.log(slides)
   }).catch(error => {
     about = '500 Server Error',
