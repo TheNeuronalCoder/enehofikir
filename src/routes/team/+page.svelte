@@ -7,7 +7,7 @@ import Footer from '../Footer.svelte'
 let team = []
 
 onMount(async () => {
-  fetch('http://localhost:1337/api/teams?populate=*')
+  fetch('http://170.187.137.154:1337/api/teams?populate=*')
   .then(res => res.json())
   .then(json => team = json.data.map(item => item.attributes))
   .catch(_ => console.error('500 Server Error'))
@@ -28,7 +28,7 @@ onMount(async () => {
       {#each team as member}
         <div class="member-card">
           <img width="300" height="200"
-               src="http://localhost:1337{member.photo.data.attributes.url}"
+               src="http://170.187.137.154:1337{member.photo.data.attributes.url}"
                alt={member.name} />
           <h3>{ member.name }</h3>
           <span>{ member.email }</span>

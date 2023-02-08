@@ -1,5 +1,6 @@
 <script>
 import Navbar from '../Navbar.svelte'
+// import Footer from '../Footer.svelte'
 import country_codes from './country_codes'
 
 let name = ''

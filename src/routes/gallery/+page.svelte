@@ -8,11 +8,11 @@ let photos = []
 let videos = []
 
 onMount(async () => {
-  fetch('http://localhost:1337/api/gallery?populate=*')
+  fetch('http://170.187.137.154:1337/api/gallery?populate=*')
   .then(res => res.json())
   .then(json => {
     videos = json.data.attributes.videos.split('\n')
-    photos = json.data.attributes.photos.data.map(item => `http://localhost:1337${item.attributes.url}`)
+    photos = json.data.attributes.photos.data.map(item => `http://170.187.137.154:1337${item.attributes.url}`)
   }).catch(error => {
     console.error('500 Server Error')
   })
