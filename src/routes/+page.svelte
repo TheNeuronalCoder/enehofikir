@@ -19,7 +19,7 @@ onMount(async () => {
 		mission = json.data.attributes.mission
 		vision = json.data.attributes.vision
 		values = json.data.attributes.values
-    slides = json.data.attributes.slides.data.map(item => `https://enehofikir.herokuapp.com${item.attributes.url}`)
+    slides = json.data.attributes.slides.data.map(item => item.attributes.url)
     console.log(slides)
   }).catch(error => {
     about = '500 Server Error',

@@ -12,7 +12,7 @@ onMount(async () => {
   .then(res => res.json())
   .then(json => {
     videos = json.data.attributes.videos.split('\n')
-    photos = json.data.attributes.photos.data.map(item => `https://enehofikir.herokuapp.com${item.attributes.url}`)
+    photos = json.data.attributes.photos.data.map(item => item.attributes.url)
   }).catch(error => {
     console.error('500 Server Error')
   })
