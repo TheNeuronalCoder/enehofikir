@@ -8,11 +8,11 @@ let photos = []
 let videos = []
 
 onMount(async () => {
-  fetch('http://170.187.137.154/api/gallery?populate=*')
+  fetch('https://enehofikir.herokuapp.com/api/gallery?populate=*')
   .then(res => res.json())
   .then(json => {
     videos = json.data.attributes.videos.split('\n')
-    photos = json.data.attributes.photos.data.map(item => `http://170.187.137.154${item.attributes.url}`)
+    photos = json.data.attributes.photos.data.map(item => `https://enehofikir.herokuapp.com${item.attributes.url}`)
   }).catch(error => {
     console.error('500 Server Error')
   })

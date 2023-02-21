@@ -7,7 +7,7 @@ import Footer from '../Footer.svelte'
 let team = []
 
 onMount(async () => {
-  fetch('http://170.187.137.154/api/teams?populate=*')
+  fetch('https://enehofikir.herokuapp.com/api/teams?populate=*')
   .then(res => res.json())
   .then(json => team = json.data.map(item => item.attributes))
   .catch(_ => console.error('500 Server Error'))
@@ -28,7 +28,7 @@ onMount(async () => {
       {#each team as member}
         <div class="member-card">
           <img width="300" height="200"
-               src="http://170.187.137.154{member.photo.data.attributes.url}"
+               src="https://enehofikir.herokuapp.com{member.photo.data.attributes.url}"
                alt={member.name} />
           <h3>{ member.name }</h3>
           <span>{ member.email }</span>

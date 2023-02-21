@@ -7,7 +7,7 @@ import Footer from '../Footer.svelte'
 let projects = []
 
 onMount(async () => {
-  fetch('http://170.187.137.154/api/projects?populate=*')
+  fetch('https://enehofikir.herokuapp.com/api/projects?populate=*')
   .then(res => res.json())
   .then(json => projects = json.data.map(item => item.attributes))
   .catch(_ => console.error('500 Server Error'))
@@ -27,7 +27,7 @@ onMount(async () => {
     <div id="project-list">
       {#each projects as project}
         <div class="project-card">
-          <img src="http://170.187.137.154{project.thumbnail.data.attributes.url}" alt="Project Thumbnail" />
+          <img src="https://enehofikir.herokuapp.com{project.thumbnail.data.attributes.url}" alt="Project Thumbnail" />
           <h2>{ project.title }</h2>
           <span>{ project.description }</span>
           <a href="/">Read More...</a>
