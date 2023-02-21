@@ -28,7 +28,7 @@ onMount(async () => {
       {#each team as member}
         <div class="member-card">
           <img width="300" height="200"
-               src="https://enehofikir.herokuapp.com{member.photo.data.attributes.url}"
+               src={member.photo.data.attributes.url}
                alt={member.name} />
           <h3>{ member.name }</h3>
           <span>{ member.email }</span>

@@ -28,7 +28,7 @@ onMount(async () => {
       {#each children as child}
         <div class="member-card">
           <img width="300" height="200"
-               src="https://enehofikir.herokuapp.com{child.photo.data.attributes.url}"
+               src={child.photo.data.attributes.url}
                alt={child.name} />
           <h3>{ child.name }</h3>
           <span>{ child.name }</span>

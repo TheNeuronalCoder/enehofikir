@@ -58,7 +58,7 @@ onMount(async () => {
     <div id="cover-stories">
       {#each cover_stories as story}
         <div>
-          <img src="https://enehofikir.herokuapp.com{story.thumbnail.data.attributes.url}" alt={story.title} />
+          <img src={story.thumbnail.data.attributes.url} alt={story.title} />
           <a href={`/news/${story.title.toLowerCase().split(' ').join('-')}`}>{ story.title }</a>
         </div>
       {/each}
@@ -90,7 +90,7 @@ onMount(async () => {
       {#each latest_news.slice(page*4, Math.min(latest_news.length, page*4+4)) as story}
         <div>
           <a href={`/news/${story.title.toLowerCase().split(' ').join('-')}`}>
-            <img src="https://enehofikir.herokuapp.com{story.thumbnail.data.attributes.url}" alt={story.title} />
+            <img src={story.thumbnail.data.attributes.url} alt={story.title} />
             <h2>{ story.title }</h2>
             <p>{ story.content.substring(0, 150) }...</p>
           </a>

@@ -27,7 +27,7 @@ onMount(async () => {
     <div id="project-list">
       {#each projects as project}
         <div class="project-card">
-          <img src="https://enehofikir.herokuapp.com{project.thumbnail.data.attributes.url}" alt="Project Thumbnail" />
+          <img src={project.thumbnail.data.attributes.url} alt="Project Thumbnail" />
           <h2>{ project.title }</h2>
           <span>{ project.description }</span>
           <a href="/">Read More...</a>
