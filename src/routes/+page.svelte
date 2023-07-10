@@ -12,7 +12,7 @@ let values = ''
 let slides = []
 
 onMount(async () => {
-  fetch('https://enehofikir.herokuapp.com/api/home?populate=*')
+  fetch('https://enehofikir.onrender.com/api/home?populate=*')
   .then(res => res.json())
   .then(json => {
 		about = json.data.attributes.about
