@@ -11,7 +11,7 @@ let contacts = {
 }
 
 onMount(async () => {
-  fetch('https://enehofikir.herokuapp.com/api/contact')
+  fetch('https://enehofikir.onrender.com/api/contact')
   .then(res => res.json())
   .then(json => {
 		contacts = json.data.attributes
