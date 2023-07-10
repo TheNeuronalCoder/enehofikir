@@ -29,7 +29,7 @@ const next_page = () => {
 }
 
 onMount(async () => {
-  fetch('https://enehofikir.herokuapp.com/api/stories?populate=*')
+  fetch('https://enehofikir.onrender.com/api/stories?populate=*')
   .then(res => res.json())
   .then(json => {
     const data = json.data.map(story => story.attributes)
