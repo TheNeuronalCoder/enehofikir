@@ -7,7 +7,7 @@ import Footer from '../Footer.svelte'
 let projects = []
 
 onMount(async () => {
-  fetch('https://enehofikir.herokuapp.com/api/projects?populate=*')
+  fetch('https://enehofikir.onrender.com/api/projects?populate=*')
   .then(res => res.json())
   .then(json => projects = json.data.map(item => item.attributes))
   .catch(_ => console.error('500 Server Error'))
