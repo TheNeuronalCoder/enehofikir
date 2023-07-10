@@ -8,7 +8,7 @@ let photos = []
 let videos = []
 
 onMount(async () => {
-  fetch('https://enehofikir.herokuapp.com/api/gallery?populate=*')
+  fetch('https://enehofikir.onrender.com/api/gallery?populate=*')
   .then(res => res.json())
   .then(json => {
     videos = json.data.attributes.videos.split('\n')
